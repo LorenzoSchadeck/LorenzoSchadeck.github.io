@@ -8,8 +8,14 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import './App.css';
 
 // Import assets
-import ozImage from './assets/oz.png';
-import aceVideo from './assets/Ace.mp4';
+import HSFimg from './assets/HSFimg.png';
+import HSFvid from './assets/HSFvid.mp4';
+
+import ECHimg from './assets/ECHimg.png';
+import ECHvid from './assets/ECHvid.mp4';
+
+import SDMimg from './assets/SDMimg.png';
+import SDMvid from './assets/SDMvid.mp4';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -28,10 +34,10 @@ const App = () => {
     {
       id: 1,
       title: "Horror Story Folks",
-      description: "Jogo de horror independente desenvolvido na Red Titan Entertainment. Focado em atmosfera psicológica e mecânicas de sobrevivência.",
-      image: ozImage,
-      video: aceVideo,
-      technologies: ["Unity", "C#", "Atmospheric Audio"],
+      description: "Jogo de horror independente desenvolvido pela UF Team. Focado em resolução de enigmas e mecânicas de sobrevivência.",
+      image: HSFimg,
+      video: HSFvid,
+      technologies: ["Unity", "C#", "Game Design","Horror"],
       link: "https://uf-team.itch.io/horrorstoryfolks",
       status: "Em Desenvolvimento",
       role: "Gameplay Programmer"
@@ -40,35 +46,24 @@ const App = () => {
       id: 2,
       title: "Echoes: Capítulo 1",
       description: "Jogo de horror psicológico desenvolvido como parte do Trabalho de Iniciação Científica (TIC), explorando imersão e narrativa interativa.",
-      image: ozImage,
-      video: aceVideo,
+      image: ECHimg,
+      video: ECHvid,
       technologies: ["Unity", "C#", "Psychological Horror", "Narrative Design"],
       link: "#",
-      status: "TIC - Em Desenvolvimento",
+      status: "Em Desenvolvimento",
       role: "Lead Developer"
     },
     {
       id: 3,
       title: "Sombra das Memórias",
       description: "Projeto desenvolvido em Game Jam, explorando mecânicas de memória e atmosfera sombria.",
-      image: ozImage,
-      video: aceVideo,
+      image: SDMimg,
+      video: SDMvid,
       technologies: ["Unity", "C#", "Game Jam", "Rapid Prototyping"],
       link: "https://uf-team.itch.io/sombra-das-memorias",
       status: "Concluído",
       role: "Programmer"
     },
-    {
-      id: 4,
-      title: "Hero of Domus",
-      description: "Jogo de ação e aventura com mecânicas de combate e exploração, desenvolvido em colaboração.",
-      image: ozImage,
-      video: aceVideo,
-      technologies: ["Unity", "C#", "Action RPG", "Combat System"],
-      link: "https://lorenzogrando.itch.io/hero-of-domus",
-      status: "Concluído",
-      role: "Gameplay Programmer"
-    }
   ];
 
   const skillIcons = {
@@ -238,7 +233,7 @@ const App = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Sobre Mim</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Desenvolvedor de jogos apaixonado por mecânicas e experiências interativas, 
-              especializado em horror psicológico e gameplay programming.
+              atuante como gameplay programming.
             </p>
           </motion.div>
 
@@ -252,9 +247,8 @@ const App = () => {
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold mb-4 text-gradient">Atualmente</h3>
                   <ul className="space-y-3 text-muted-foreground">
-                    <li>👨‍💻 Trabalhando na <strong>Red Titan Entertainment</strong></li>
                     <li>👻 Desenvolvendo <strong>Horror Story Folks</strong></li>
-                    <li>🧠 Criando <strong>Echoes: Capítulo 1</strong> (TIC)</li>
+                    <li>🧠 Desenvolvendo <strong>Echoes: Capítulo 1</strong> (TIC)</li>
                     <li>🏆 Participante ativo de <strong>Game Jams</strong></li>
                   </ul>
                 </CardContent>
@@ -294,8 +288,7 @@ const App = () => {
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Meus Projetos</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Uma seleção dos meus trabalhos mais recentes em desenvolvimento de jogos, 
-              focando em horror psicológico e mecânicas inovadoras.
+              Conheça meus projetos com uma seleção dos mais recentes.
             </p>
           </motion.div>
 
@@ -342,7 +335,7 @@ const App = () => {
                       )}
                       <Button size="sm" variant="outline" onClick={() => openDemoModal(project.video)}>
                         <Play size={16} className="mr-2" />
-                        Demo
+                        Play
                       </Button>
                     </div>
                   </CardContent>
@@ -392,7 +385,7 @@ const App = () => {
                 "Jogos bem-feitos são aqueles que você sente, não apenas joga."
               </p>
               <p className="text-sm text-muted-foreground">
-                — Lorenzo Schadeck, TIC - Trabalho de Iniciação Científica
+                — Lorenzo Schadeck, Trabalho de Iniciação Científica
               </p>
             </div>
           </motion.div>
