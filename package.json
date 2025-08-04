@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "http://LorenzoSchadeck.github.io/portfolio-site/",
+  "homepage": "https://LorenzoSchadeck.github.io/",
+
   "scripts": {
     "dev": "vite",
     "build": "vite build",
