@@ -34,7 +34,7 @@ const App = () => {
     {
       id: 1,
       title: "Horror Story Folks",
-      description: "Jogo de horror independente desenvolvido pela UF Team. Focado em resolução de enigmas e mecânicas de sobrevivência.",
+      description: "Jogo de horror independente em desenvolvimento pela UF Team. Focado em resolução de enigmas e mecânicas de sobrevivência.",
       image: HSFimg,
       video: HSFvid,
       technologies: ["Unity", "C#", "Game Design","Horror"],
@@ -45,7 +45,7 @@ const App = () => {
     {
       id: 2,
       title: "Echoes: Capítulo 1",
-      description: "Jogo de horror psicológico desenvolvido como parte do Trabalho de Iniciação Científica (TIC), explorando imersão e narrativa interativa.",
+      description: "Jogo de horror psicológico em desenvolvimento como parte do Trabalho de Iniciação Científica (TIC), explorando imersão e narrativa interativa.",
       image: ECHimg,
       video: ECHvid,
       technologies: ["Unity", "C#", "Psychological Horror", "Narrative Design"],
