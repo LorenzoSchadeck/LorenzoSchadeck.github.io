@@ -231,7 +231,7 @@ const App = () => {
             className="text-center mb-16"
           >
             <img
-              src="/profile_photo.png" 
+              src="/Profile.jpeg" 
               alt="Lorenzo Schadeck"
               className="w-48 h-48 rounded-full object-cover border-4 border-primary shadow-lg mb-8 mx-auto"
             />
