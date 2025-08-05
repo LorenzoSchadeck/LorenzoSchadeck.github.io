@@ -17,6 +17,8 @@ import ECHvid from './assets/ECHvid.mp4';
 import SDMimg from './assets/SDMimg.png';
 import SDMvid from './assets/SDMvid.mp4';
 
+import profilePic from './assets/Profile.jpeg';
+
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -231,14 +233,14 @@ const App = () => {
             className="text-center mb-16"
           >
             <img
-              src="/Profile.jpeg" 
-              alt="Lorenzo Schadeck"
+              src={profilePic}
+              // alt="Lorenzo Schadeck"
               className="w-48 h-48 rounded-full object-cover border-4 border-primary shadow-lg mb-8 mx-auto"
             />
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Sobre Mim</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Desenvolvedor de jogos apaixonado por mecânicas e experiências interativas, 
-              atuante como gameplay programming.
+              Entusiasta do desenvolvimento de jogos com foco em gameplay programming, 
+              dedicado a construir mecânicas funcionais e contribuir para experiências interativas dinâmicas.
             </p>
           </motion.div>
 
