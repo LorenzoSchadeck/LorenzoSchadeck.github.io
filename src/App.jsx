@@ -45,7 +45,7 @@ const App = () => {
     {
       id: 2,
       title: "Echoes: Capítulo 1",
-      description: "Jogo de horror psicológico em desenvolvimento como parte do Trabalho de Iniciação Científica (TIC), explorando imersão e narrativa interativa.",
+      description: "Jogo de horror psicológico em desenvolvimento como parte do Trabalho de Iniciação Científica (TIC ), explorando imersão e narrativa interativa.",
       image: ECHimg,
       video: ECHvid,
       technologies: ["Unity", "C#", "Psychological Horror", "Narrative Design"],
@@ -91,7 +91,7 @@ const App = () => {
     { id: 'contact', label: 'Contato', icon: MessageCircle }
   ];
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId ) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -230,6 +230,11 @@ const App = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
+            <img
+              src="/profile_photo.png" 
+              alt="Lorenzo Schadeck"
+              className="w-48 h-48 rounded-full object-cover border-4 border-primary shadow-lg mb-8 mx-auto"
+            />
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Sobre Mim</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Desenvolvedor de jogos apaixonado por mecânicas e experiências interativas, 
@@ -408,14 +413,15 @@ const App = () => {
               Assista ao vídeo de demonstração do projeto.
             </DialogDescription>
           </DialogHeader>
-          <div className="relative w-full pt-[56.25%]"> {/* 16:9 Aspect Ratio */}
-            <video
-              src={currentDemoVideo}
-              controls
-              className="absolute top-0 left-0 w-full h-full rounded-md"
-            >
-              Seu navegador não suporta a tag de vídeo.
-            </video>
+          <div class="aspect-video rounded-md overflow-hidden mb-4">
+            {currentDemoVideo && (
+              <video
+                controls
+                className="w-full h-full object-cover"
+                src={currentDemoVideo}
+                type="video/mp4"
+              />
+             )}
           </div>
         </DialogContent>
       </Dialog>
@@ -424,4 +430,3 @@ const App = () => {
 };
 
 export default App;
-
