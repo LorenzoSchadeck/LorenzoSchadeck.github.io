@@ -191,7 +191,7 @@ const App = () => {
             </h1>
             <div className="text-xl md:text-2xl text-muted-foreground space-y-2">
               <p>🎮 Game Developer | 🧠 C# Programmer | 🕹️ Unity3D</p>
-              <p className="text-lg">Criando experiências interativas que misturam desafio técnico e imersão emocional</p>
+              <p className="text-lg">Desenvolvendo experiências interativas que combinam complexidade técnica e gameplay envolvente.</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
               <Button
