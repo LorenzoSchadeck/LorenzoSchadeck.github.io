@@ -72,42 +72,69 @@ const App = () => {
 
     const createEnergyLine = () => {
       const line = document.createElement('div');
-      const isVertical = Math.random() > 0.5;
-      const position = Math.random() * 80 + 10; // 10% a 90%
-      const duration = Math.random() * 3 + 3; // 3-6 segundos
-      const delay = Math.random() * 2; // 0-2 segundos de delay
-      
-      if (isVertical) {
-        line.style.cssText = `
-          position: absolute;
-          width: 2px;
-          height: 100%;
-          left: ${position}%;
-          top: -10%;
-          background: linear-gradient(180deg, transparent, rgba(93, 213, 255, 0.6), transparent);
-          box-shadow: 0 0 15px rgba(93, 213, 255, 0.5);
-          pointer-events: none;
-          animation: slideDown ${duration}s ease-in-out ${delay}s;
-        `;
-      } else {
-        line.style.cssText = `
-          position: absolute;
-          width: 100%;
-          height: 2px;
-          left: -10%;
-          top: ${position}%;
-          background: linear-gradient(90deg, transparent, rgba(93, 213, 255, 0.6), transparent);
-          box-shadow: 0 0 15px rgba(93, 213, 255, 0.5);
-          pointer-events: none;
-          animation: slideRight ${duration}s ease-in-out ${delay}s;
-        `;
+      // Ângulo aleatório (0 a 360 graus)
+      const angle = Math.random() * 360;
+      // Comprimento bem mais curto (2% a 5% do grid)
+      const length = Math.random() * 3 + 2; // 2% a 5%
+      // Posição inicial fora do grid (borda aleatória)
+      const side = Math.floor(Math.random() * 4); // 0:top, 1:right, 2:bottom, 3:left
+      let startX, startY;
+      switch (side) {
+        case 0: // top
+          startX = Math.random() * 100;
+          startY = -5;
+          break;
+        case 1: // right
+          startX = 105;
+          startY = Math.random() * 100;
+          break;
+        case 2: // bottom
+          startX = Math.random() * 100;
+          startY = 105;
+          break;
+        case 3: // left
+        default:
+          startX = -5;
+          startY = Math.random() * 100;
+          break;
       }
-      
+      // Calcular ponto final baseado no ângulo e comprimento
+      const endX = startX + Math.cos((angle * Math.PI) / 180) * length;
+      const endY = startY + Math.sin((angle * Math.PI) / 180) * length;
+      const duration = Math.random() * 2 + 1.5; // 1.5-3.5 segundos
+      const delay = Math.random() * 1.5; // 0-1.5 segundos
+      // Estilo da linha
+      line.style.cssText = `
+        position: absolute;
+        left: ${startX}%;
+        top: ${startY}%;
+        width: 2px;
+        height: ${length}%;
+        background: linear-gradient(180deg, transparent, rgba(93, 213, 255, 0.7), transparent);
+        box-shadow: 0 0 8px rgba(93, 213, 255, 0.5);
+        pointer-events: none;
+        border-radius: 2px;
+        transform: rotate(${angle}deg);
+        opacity: 0;
+        transition: opacity 0.2s;
+      `;
       gridElement.appendChild(line);
-      
+      // Animação: fade in, move, fade out
+      setTimeout(() => {
+        line.style.opacity = 1;
+        line.animate([
+          { left: `${startX}%`, top: `${startY}%`, opacity: 1 },
+          { left: `${endX}%`, top: `${endY}%`, opacity: 0.2 }
+        ], {
+          duration: duration * 1000,
+          delay: delay * 1000,
+          easing: 'ease-in-out',
+          fill: 'forwards'
+        });
+      }, 10);
       setTimeout(() => {
         line.remove();
-      }, (duration + delay) * 1000);
+      }, (duration + delay + 0.2) * 1000);
     };
 
     // Criar linhas periodicamente
